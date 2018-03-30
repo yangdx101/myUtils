@@ -35,7 +35,7 @@
      }
      );
      });      
-     
+
      function tijiao(){
      $.post("plugin.php?id=np_cliworkdz:work",
      {act:'getcre'},
