@@ -2,8 +2,7 @@
 // @name TSDM下载区半自动处理脚本
 // @namespace Violentmonkey Scripts
 // @grant none
-// @include     http://www.tsdm.net/forum.php?mod=viewthread&tid=*
-// @include     http://www.tsdm.me/forum.php?mod=viewthread&tid=*
+// @include     *://www.tsdm.*/forum.php?mod=viewthread&tid=*
 // @run-at      document-end
 // ==/UserScript==
 
@@ -112,7 +111,35 @@ if (fidhref.substr(fidhref.indexOf('fid=') + 4, 1) == '8' && fidhref.substr(fidh
     console.log("Hujimiya:即将执行");
     //window.rateFunc(5,25);
     pWaiqu = document.createElement('p');
-    pWaiqu.innerHTML = "<button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,25);\">×1</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(10,50);\">×2</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(15,75);\">×3</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(20,100);\">×4</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(25,125);\">×5</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(30,150);\">×6</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(35,175);\">×7</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(40,200);\">×8</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,30);\">400M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,35);\">500M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,40);\">600M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,45);\">700M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,50);\">800M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(5,55);\">900M+</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFunc(-10,-10);\">-10-10</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFuncMore(0,0,0,10,10,0,null);\">10糖</button><button style=\"margin-left: 5px;width: 65px;\"onclick=\"window.rateFuncMore(0,0,0,20,20,0,null);\">20糖</button>";
+    addButtonInnerHtml = "<button style=\"margin-left: 5px;width: 50px;\"onclick=\"window.rateFunc(5,5);\">5+5</button>" 
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,10);\">10+10</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(-10,-10);\">-10-10</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(5,25);\">×1</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(10,50);\">×2</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(15,75);\">×3</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(20,100);\">×4</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(25,125);\">×5</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(30,150);\">×6</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(35,175);\">×7</button>"
+      + "<button style=\"margin-left: 5px;width: 35px;\"onclick=\"window.rateFunc(40,200);\">×8</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,30);\">400</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,60);\">400×2</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(20,120);\">400×4</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,35);\">500</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,70);\">500×2</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(20,140);\">500×4</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,40);\">600</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,80);\">600×2</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,45);\">700</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,90);\">700×2</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,50);\">800</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,100);\">800×2</button>"
+      + "<button style=\"margin-left: 5px;width: 40px;\"onclick=\"window.rateFunc(5,55);\">900</button>"
+      + "<button style=\"margin-left: 5px;width: 55px;\"onclick=\"window.rateFunc(10,110);\">900×2</button>"
+      + "<button style=\"margin-left: 5px;width: 85px;\"onclick=\"window.rateFunc(15,30);\">(5×1+10)×2</button>"
+      + "<button style=\"margin-left: 5px;width: 50px;\"onclick=\"window.rateFuncMore(0,0,0,10,10,0,null);\">10糖</button>"
+      + "<button style=\"margin-left: 5px;width: 50px;\"onclick=\"window.rateFuncMore(0,0,0,20,20,0,null);\">20糖</button>";
+    pWaiqu.innerHTML = addButtonInnerHtml;
     pstlstp.insertBefore(pWaiqu, pstlst);
     smjq(pWaiqu).css('color', 'red');
     smjq(pWaiqu).css('background-color', 'rgba(0,0,0,0)');
