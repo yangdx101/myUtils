@@ -3,18 +3,15 @@
 // @namespace   https://greasyfork.org/zh-CN/users/821
 // @author      gfork
 // @description 天使动漫自动打工脚本 参考了setycyas和AurevoirXavier的部分代码 对他们表示感谢
-// @include     *://www.tsdm.net/plugin.php?id=np_cliworkdz:work*
-// @include     *://www.tsdm.me/plugin.php?id=np_cliworkdz:work*
-// @include     *://www.tsdm.tw/plugin.php?id=np_cliworkdz:work*
-// @include     *://www.tsdm.me/forum.php?mod=viewthread&tid=321479
-// @include     *://www.tsdm.tw/forum.php?mod=viewthread&tid=321479
+// @include     *://www.tsdm.*/plugin.php?id=np_cliworkdz:work*
+// @include     *://www.tsdm.*/forum.php?mod=viewthread&tid=321479
 // @version     4.2
 // @grant       none
 // @run-at      document-end
 // @license     GPL version 3
 // ==/UserScript==
 
- 
+
 /*   老版本备份 不用管
      var num=0;
      $('div[id*="np_advid"]>a').each(function(index, element) {
@@ -46,7 +43,7 @@
      window.location=window.location;}
      );
      }
-        
+
      function remind(data){
      var info=data.match(/class="alert_info">[\s]{0,4}<p>([^<]*)</)[1];
      return info;
