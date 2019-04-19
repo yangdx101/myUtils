@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spoils.html</title>
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+div{margin-bottom:5px;}
+</style>
+</head>
+<body>
+	<div>初始：<input type="text" id="initial" oninput="calculate()" value="37"/></div>
+	<div>目标：<input type="text" id="target" disabled="disabled" /></div>
+	<div>当前：<input type="text" id="current" oninput="calculate()" /></div>
+	<div>完成：<input type="text" id="finished" disabled="disabled" /></div>
+	<div>剩余：<input type="text" id="undone" disabled="disabled" /></div>
+	<div>
+		<input type="button" id="button1" onclick="addFifty()" value="初始加50" />&nbsp;
+		<input type="button" id="button2" onclick="addOne()" value="当前加1" />
+	</div>
+</body>
+<script type="text/javascript">
+document.getElementById("current").value = document.getElementById("initial").value;
+calculate();
+function calculate() {
+	var num1 = document.getElementById("initial").value;
+	var num2 = document.getElementById("current").value;
+	var num3 = num2 - num1;
+	document.getElementById("finished").value = num3;
+	document.getElementById("undone").value = 50 - num3;
+	document.getElementById("target").value = document.getElementById("initial").value - (-50);
+}
+function addFifty() {
+	document.getElementById("initial").value = document.getElementById("initial").value - (-50);
+	calculate();
+}
+function addOne() {
+	document.getElementById("current").value = document.getElementById("current").value - (-1);
+	calculate();
+}
+</script>
+</html>
